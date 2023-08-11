@@ -1,7 +1,13 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main></main>
-  )
+  const fetchData = async () => {
+    const response = await fetch("/api/getAirtableData");
+    const data = await response.json();
+    console.log(data);
+  };
+
+  fetchData();
+
+  return <main></main>;
 }
