@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import Airtable from "airtable";
 
-const Airtable = require("airtable");
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
   apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY
@@ -12,6 +12,6 @@ export default async function handler(
   _req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const records = await table.select({}).all();
+  const records = await table.select().all();
   return res.status(200).json(records);
 }
