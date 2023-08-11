@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 export default async function Home() {
-  const response = await fetch("http://localhost:3000/api/airtable");
+  const response = await fetch("/api/airtable");
   const data = await response.json();
 
   return (
