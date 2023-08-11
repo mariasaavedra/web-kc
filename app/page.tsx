@@ -6,7 +6,7 @@ export default async function Home() {
   const data = await response.json();
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-slate-200">
+    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#f6c492]">
       {data &&
         data.length > 0 &&
         data.map((activity: any, i: any) => {
