@@ -12,12 +12,12 @@ export default async function Home() {
         data.map((activity: any, i: any) => {
           return (
             <div
-              className="bg-white border rounded shadow border p-8 overflow-hidden"
+              className="bg-white border rounded shadow border p-4 overflow-hidden"
               key={i}
             >
               {Boolean(activity.fields.Attachments) &&
                 activity.fields.Attachments.length > 0 && (
-                  <img className="object-cover h-[250px] rounded" src={activity.fields.Attachments[0].url} />
+                  <img className="object-cover w-full h-[150px] rounded" src={activity.fields.Attachments[0].url} />
                 )}
               <h3 className="font-bold my-2 text-lg">{activity.fields.Name}</h3>
               <span className="my-2 uppercase text-xs text-gray-600">
