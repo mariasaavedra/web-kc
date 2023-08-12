@@ -1,9 +1,20 @@
-import Image from "next/image";
-import { useEffect } from "react";
+import { NextResponse } from "next/server";
+import Airtable from "airtable";
+
+Airtable.configure({
+  endpointUrl: "https://api.airtable.com",
+  apiKey: process.env.NEXT_PUBLIC_AIRTABLE_API_KEY,
+});
+const base = Airtable.base("appXn8rWR51YKBwX2");
+const table = base("Activities");
+
+async function getData() {
+  const records = await table.select().all();
+  return records;
+}
 
 export default async function Home() {
-  const response = await fetch("/api/airtable");
-  const data = await response.json();
+  const data = await getData();
 
   return (
     <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#cb997e]">
