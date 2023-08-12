@@ -17,19 +17,19 @@ export default async function Home() {
   const data = await getData();
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#cb997e]">
+    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#9ED2BE]">
       {data &&
         data.length > 0 &&
         data.map((activity: any, i: any) => {
           return (
             <div
-              className="bg-[#f7ede2] rounded shadow  p-4 overflow-hidden"
+              className="bg-[#f5f5f5] rounded-xl shadow-xl  p-4 overflow-hidden"
               key={i}
             >
               {Boolean(activity.fields.Attachments) &&
                 activity.fields.Attachments.length > 0 && (
                   <img
-                    className="object-cover w-full h-[150px] rounded"
+                    className="shadow object-cover w-full h-[150px] rounded"
                     src={activity.fields.Attachments[0].url}
                   />
                 )}
@@ -47,7 +47,7 @@ export default async function Home() {
               )}
               <a
                 href={`${activity.fields.Website}`}
-                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-blue-700 text-sm my-2 max-w-[500px]"
+                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-sm my-2 max-w-[500px]"
               >
                 {activity.fields.Website}
               </a>
@@ -58,7 +58,7 @@ export default async function Home() {
               )}
               <a
                 href={`${activity.fields["Social Media"]}`}
-                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-blue-700 text-sm my-2 max-w-[500px]"
+                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-sm my-2 max-w-[500px]"
               >
                 {activity.fields["Social Media"]}
               </a>
