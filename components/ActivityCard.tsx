@@ -40,7 +40,7 @@ function ActivityCard({ activity }: ActivityCardProps) {
       <p className="text-sm my-2">{fields.Details.substring(0, 150)}</p>
 
       {fields.Website && (
-        <>
+        <div>
           <span className="my-2 uppercase text-xs text-gray-600">Website</span>
           <a
             target="_blank"
@@ -50,11 +50,11 @@ function ActivityCard({ activity }: ActivityCardProps) {
           >
             {fields.Website}
           </a>
-        </>
+        </div>
       )}
 
       {fields.SocialMedia && (
-        <>
+        <div>
           <span className="my-2 uppercase text-xs text-gray-600">Social</span>
           <a
             target="_blank"
@@ -64,14 +64,14 @@ function ActivityCard({ activity }: ActivityCardProps) {
           >
             {fields.SocialMedia}
           </a>
-        </>
+        </div>
       )}
 
       {fields.ActivityTypes &&
         fields.ActivityTypes.length > 0 &&
-        fields.ActivityTypes.map((type, i) => (
+        fields.ActivityTypes.map((type) => (
           <span
-            key={i}
+            key={type}
             className="bg-blue-100 text-blue-800 text-xs font-medium my-2 mr-2 px-2.5 py-0.5 rounded-full"
           >
             {type}
