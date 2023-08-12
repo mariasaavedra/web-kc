@@ -62,6 +62,18 @@ export default async function Home() {
               >
                 {activity.fields["Social Media"]}
               </a>
+              {activity.fields["Kind of Activity"] &&
+                activity.fields["Kind of Activity"].length > 0 &&
+                activity.fields["Kind of Activity"].map((type, i) => {
+                  return (
+                    <span
+                      key={i}
+                      className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full 0"
+                    >
+                      {type}
+                    </span>
+                  );
+                })}
             </div>
           );
         })}
