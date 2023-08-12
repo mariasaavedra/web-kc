@@ -46,29 +46,34 @@ export default async function Home() {
                 </span>
               )}
               <a
+                target="_blank"
                 href={`${activity.fields.Website}`}
-                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-sm my-2 max-w-[500px]"
+                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-xs my-2 max-w-[500px]"
               >
                 {activity.fields.Website}
               </a>
-              {Boolean(activity.fields.Website) && (
-                <span className="my-2 uppercase text-xs text-gray-600">
-                  Social
-                </span>
+              {Boolean(activity.fields["Social Media"]) && (
+                <>
+                  <span className="my-2 uppercase text-xs text-gray-600">
+                    Social
+                  </span>
+                  <a
+                    target="_blank"
+                    href={`${activity.fields["Social Media"]}`}
+                    className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-xs my-2 max-w-[500px]"
+                  >
+                    {activity.fields["Social Media"]}
+                  </a>
+                </>
               )}
-              <a
-                href={`${activity.fields["Social Media"]}`}
-                className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-sm my-2 max-w-[500px]"
-              >
-                {activity.fields["Social Media"]}
-              </a>
+
               {activity.fields["Kind of Activity"] &&
                 activity.fields["Kind of Activity"].length > 0 &&
                 activity.fields["Kind of Activity"].map((type, i) => {
                   return (
                     <span
                       key={i}
-                      className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full 0"
+                      className="bg-blue-100 text-blue-800 text-xs font-medium my-2 mr-2 px-2.5 py-0.5 rounded-full 0"
                     >
                       {type}
                     </span>
