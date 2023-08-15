@@ -30,7 +30,7 @@ function ActivityCardDetails({ fields }: Activity) {
       <h3 className="font-bold my-2 text-lg">{fields.Name}</h3>
 
       <span className="my-2 uppercase text-xs text-gray-600">Details</span>
-      <p className="text-sm my-2 max-h-[145px] overflow-y-scroll">
+      <p className="text-sm pr-4  py-2 my-2 max-h-[145px] overflow-y-scroll">
         {fields.Details}
       </p>
 
