@@ -19,8 +19,8 @@ export default function Modal(props: ModalProps) {
       {/* The backdrop, rendered as a fixed sibling to the panel container */}
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <Dialog.Panel className="w-full md:w-1/2 h-full rounded bg-white">
-          <Link className="outline-0 mr-0 px-2 pt-2 block text-right " href="/">
+        <Dialog.Panel className="w-full md:w-1/2 h-full rounded-lg bg-white">
+          <Link className="outline-none border-0 mr-0 px-2 pt-2 block text-right " href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
