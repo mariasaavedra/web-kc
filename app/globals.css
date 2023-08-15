@@ -20,6 +20,6 @@ a {
   color: #27374D;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #000 !important;
+body::-webkit-scrollbar-track {
+  background: #000;        /* color of the tracking area */
 }
