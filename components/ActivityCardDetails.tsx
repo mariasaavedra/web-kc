@@ -7,7 +7,8 @@ interface ActivityFields {
   Name: string;
   Details: string;
   Website?: string;
-  SocialMedia?: string;
+  Instagram?: string;
+  Facebook?: string;
   ActivityTypes?: string[];
 }
 
@@ -29,7 +30,9 @@ function ActivityCardDetails({ fields }: Activity) {
       <h3 className="font-bold my-2 text-lg">{fields.Name}</h3>
 
       <span className="my-2 uppercase text-xs text-gray-600">Details</span>
-      <p className="text-sm my-2 max-h-[145px] overflow-y-scroll">{fields.Details}</p>
+      <p className="text-sm my-2 max-h-[145px] overflow-y-scroll">
+        {fields.Details}
+      </p>
 
       {fields.Website && (
         <div>
@@ -45,16 +48,32 @@ function ActivityCardDetails({ fields }: Activity) {
         </div>
       )}
 
-      {fields.SocialMedia && (
+      {fields.Instagram && (
         <div>
-          <span className="my-2 uppercase text-xs text-gray-600">Social</span>
+          <span className="my-2 uppercase text-xs text-gray-600">
+            Instagram
+          </span>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={fields.SocialMedia}
+            href={fields.Instagram}
             className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-xs my-2 max-w-[500px]"
           >
-            {fields.SocialMedia}
+            {fields.Instagram}
+          </a>
+        </div>
+      )}
+
+      {fields.Facebook && (
+        <div>
+          <span className="my-2 uppercase text-xs text-gray-600">Facebook</span>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={fields.Facebook}
+            className="whitespace-nowrap block font-bold overflow-hidden text-ellipsis text-xs my-2 max-w-[500px]"
+          >
+            {fields.Facebook}
           </a>
         </div>
       )}
