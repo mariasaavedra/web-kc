@@ -20,6 +20,15 @@ a {
   color: #27374D;
 }
 
-  p::-webkit-scrollbar-track {
-  background: #000;        /* color of the tracking area */
+/* WebKit and Chromiums */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+  background-color: #cad2c5;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #84a98c;
+  border-radius: 20px;
 }
