@@ -22,7 +22,7 @@ type Props = {
 export default async function Home({ searchParams }: Props) {
   const data = await getData();
   return (
-    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#9ED2BE]">
+    <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-yellow">
       {data?.map((activity: any) => {
         return (
           <ActivityCard
