@@ -22,7 +22,6 @@ export default function Modal(props: ModalProps) {
         <Dialog.Panel className="w-1/2 h-full p-8 rounded bg-white">
           <Link href="/">
             <svg
-              className="block r-0 mr-0 "
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -32,7 +31,7 @@ export default function Modal(props: ModalProps) {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-x-square"
+              className="block lucide lucide-x-square"
             >
               <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
               <path d="m15 9-6 6" />
