@@ -21,22 +21,17 @@ type Props = {
 
 export default async function Home({ searchParams }: Props) {
   const data = await getData();
-  const showModal = searchParams?.modal;
-
   return (
     <main className="grid grid-cols-1 md:grid-cols-4 gap-4 p-8 bg-[#9ED2BE]">
       {data?.map((activity: any) => {
-        return <ActivityCard key={activity} activity={activity} />;
+        return (
+          <ActivityCard
+            key={activity}
+            searchParams={searchParams}
+            activity={activity}
+          />
+        );
       })}
-
-      <Link
-        href="/?modal=true"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        OPEN THY MODAL
-      </Link>
-
-      {showModal && <Dialog />}
     </main>
   );
 }

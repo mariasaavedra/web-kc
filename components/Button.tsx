@@ -4,7 +4,7 @@ function Button() {
     const handleClick = () => {
         console.log("hello");
     }
-  return <button onClick={handleClick} className="p-4 bg-red-400">Hello</button>;
+  return <a onClick={handleClick} href="#modal1" className="p-2 bg-blue-400">Open Modal</a>;
 }
 
 export default Button;
