@@ -1,20 +1,4 @@
-interface Attachment {
-  url: string;
-}
-
-interface ActivityFields {
-  Attachments?: Attachment[];
-  Name: string;
-  Details: string;
-  Website?: string;
-  Instagram?: string;
-  Facebook?: string;
-  ActivityTypes?: string[];
-}
-
-interface Activity {
-  fields: ActivityFields;
-}
+import { Activity } from "@/types";
 
 function ActivityCardDetails({ fields }: Activity) {
   return (

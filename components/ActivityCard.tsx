@@ -1,37 +1,20 @@
 import React from "react";
-import Button from "./Button";
-import Dialog from "./Dialog";
 import ActivityCardDetails from "./ActivityCardDetails";
+import Modal from "./Modal";
+import { ActivityCardProps } from "@/types";
 
-interface Attachment {
-  url: string;
-}
-
-interface ActivityFields {
-  Attachments?: Attachment[];
-  Name: string;
-  Details: string;
-  Website?: string;
-  SocialMedia?: string;
-  ActivityTypes?: string[];
-}
-
-interface Activity {
-  fields: ActivityFields;
-}
-
-interface ActivityCardProps {
-  activity: Activity;
-  searchParams: Record<string, string | null | undefined>;
-}
 
 function ActivityCard({ activity, searchParams }: ActivityCardProps) {
-  const { fields } = activity;
-  const showModal = searchParams?.modal;
+  const { id, fields } = activity;
+  const showActivity = searchParams?.activity; // get the id from params ex: "?activity=123"
+
+  console.log(showActivity);
 
   return (
     <div className="bg-[#f5f5f5] cursor-pointer rounded-xl shadow-xl p-4 overflow-hidden">
-      <ActivityCardDetails fields={fields} />
+      <ActivityCardDetails  id={id} fields={fields} />
+      <a href={`?activity=${id}`}>View</a>
+      {id === showActivity && activity !== undefined && <Modal fields={fields}/>}
     </div>
   );
 }

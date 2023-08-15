@@ -1,7 +1,7 @@
 import Airtable from "airtable";
 import ActivityCard from "@/components/ActivityCard";
 import Link from "next/link";
-import Dialog from "@/components/Dialog";
+import Dialog from "@/components/Modal";
 
 Airtable.configure({
   endpointUrl: "https://api.airtable.com",
